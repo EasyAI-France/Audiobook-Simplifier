@@ -1,56 +1,56 @@
-# 🎧 Simplificateur de livres audio — Audiobook Simplifier
+# 🎧 Audiobook Simplifier
 
-**Audiobook Simplifier** est un outil qui crée des livres audio à partir de documents texte ou de livres électroniques à l'aide de la technologie TTS (Text-to-Speech).
+**Audiobook Simplifier** is a tool that creates audiobooks from text documents or eBooks using TTS (Text-to-Speech) technology.
 
 ---
 
 ## 📘 Description
 
-Ce projet transforme des documents texte ou des livres électroniques en fichiers audio à l'aide de **TTSv2**, rendant le contenu écrit accessible au format audio. Idéal pour l'accessibilité, les personnes malvoyantes ou tout simplement pour ceux qui préfèrent écouter un livre plutôt que de le lire.
+This project converts text documents or eBooks into audio files using **TTSv2**, making written content accessible in audio format. Ideal for accessibility, visually impaired users, or anyone who prefers listening to a book instead of reading.
 
 ---
 
 ## ⚙️ Installation
 
-### 🔧 Prérequis
+### 🔧 Prerequisites
 
-Assurez-vous d'avoir installé les éléments suivants :
+Make sure the following components are installed:
 
 - **Python 3.10**  
-  👉 [Télécharger Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)  
-  > Pendant l'installation :
-  > - Cochez "Installer pour tous les utilisateurs".
-  > - Cochez "Ajouter Python au PATH".
+  👉 [Download Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)  
+  > During installation:
+  > - Check "Install for all users".
+  > - Check "Add Python to PATH".
 
 - **FFmpeg**  
-  👉 [Télécharger FFmpeg](https://www.ffmpeg.org/download.html)  
-  > Ajoutez FFmpeg à votre variable d'environnement `PATH`.
+  👉 [Download FFmpeg](https://www.ffmpeg.org/download.html)  
+  > Add FFmpeg to your system `PATH` variable.
 
 - **CUDA Toolkit 10.1**  
-  👉 [Télécharger CUDA Toolkit 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base)  
+  👉 [Download CUDA Toolkit 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base)  
 
-- **cuDNN v7.6.5 pour CUDA 10.1**  
-  👉 [Télécharger cuDNN v7.6.5](https://developer.nvidia.com/rdp/cudnn-archive)  
-  > Dézippez et copiez les fichiers dans :  
+- **cuDNN v7.6.5 for CUDA 10.1**  
+  👉 [Download cuDNN v7.6.5](https://developer.nvidia.com/rdp/cudnn-archive)  
+  > Extract and copy the files into:  
   > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1`
 
-- **eSpeak NG (64 bits)**  
-  👉 [Télécharger eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
+- **eSpeak NG (64-bit)**  
+  👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
 
-- **Git pour Windows**  
-  👉 [Télécharger Git](https://git-scm.com/downloads/win)
+- **Git for Windows**  
+  👉 [Download Git](https://git-scm.com/downloads/win)
 
 ---
 
-### 📦 Installation du projet
+### 📦 Project Installation
 
-1. Clonez ce dépôt sur votre machine :
+1. Clone this repository:
    ```bash
-   git clone https://github.com/votre-utilisateur/audiobook-simplifier.git
+   git clone https://github.com/your-username/audiobook-simplifier.git
    cd audiobook-simplifier
    ```
 
-2. Installez les dépendances dans un environnement virtuel (optionnel mais recommandé) :
+2. (Recommended) Install dependencies in a virtual environment:
    ```bash
    python -m venv .venv
    .venv\Scripts\activate
@@ -59,17 +59,17 @@ Assurez-vous d'avoir installé les éléments suivants :
 
 ---
 
-## ▶️ Utilisation
+## ▶️ Usage
 
-### Lancement
+### Start the application
 
-#### Sous Windows :
+#### On Windows:
 
-- Double-cliquez sur `start.bat`.
-- Sélectionnez votre langue.
-- Ouvrez l’URL affichée dans votre navigateur.
+- Double-click `start.bat`.
+- Select your language.
+- Open the displayed URL in your browser.
 
-#### Ligne de commande :
+#### Command line:
 
 ```bash
 .venv\Scripts\activate
@@ -78,48 +78,49 @@ python scripts\main_eng.py
 
 ---
 
-### Étapes d’utilisation
+### Usage Instructions
 
-1. **Choisissez une voix TTS** au format `.wav`.
-2. **Sélectionnez la langue** dans le menu déroulant.
-3. **Activez/désactivez les sous-titres**.
-4. **Téléchargez votre fichier texte ou eBook** (optimisé paragraphe par paragraphe).
-5. **Lancez le traitement** pour rendre le texte plus compréhensible pour le moteur TTS.
-6. **Générez les fichiers audio** (plusieurs segments seront créés dans le dossier `cache`).
-7. **Compilez les segments** en un seul fichier audio via le bouton « Compiler les fichiers audio ».
-8. **Écoutez et téléchargez** votre livre audio.
-9. **Nettoyez le cache** avec « Supprimer les fichiers ».
+1. **Select a TTS voice** in `.wav` format.
+2. **Choose the language** from the dropdown menu.
+3. **Enable or disable subtitles**.
+4. **Upload your text file or eBook** (optimized for one paragraph at a time).
+5. **Process the text** to make it more understandable for the TTS engine.
+6. **Convert text files into audio files** (multiple segments will be created in the `cache` folder).
+7. **Compile segments into a single audio file** using the "Compile audio files" button.
+8. **Listen to and download** your audiobook.
+9. **Clear the cache** using the "Delete files" button.
 
-#### En cas de fichier audio incorrect :
+#### In case of an incorrectly generated file:
 
-1. Cliquez sur « Transformer un audio ».
-2. Indiquez le nom du fichier `.wav`.
-3. Réécrivez le texte à corriger.
-4. Cliquez sur « Recompiler le fichier audio ».
-
----
-
-## 🤝 Contribution
-
-Ce projet est maintenu par **EasyAI-France**.  
-Il utilise le moteur TTS open source de [Coqui TTS](https://github.com/coqui-ai/TTS).
-
-Les contributions sont les bienvenues !  
-N’hésitez pas à proposer des améliorations, corriger des bugs ou créer des tickets.
+1. Click on “Transform an audio”.
+2. Enter the name of the `.wav` file.
+3. Rewrite the text to be fixed.
+4. Click “Recompile audio file”.
 
 ---
 
-## 📝 Licence
+## 🤝 Contributing
 
-Ce projet est distribué sous licence **open source**.
+This project is maintained by **EasyAI-France**.  
+It uses the open-source TTS engine from [Coqui TTS](https://github.com/coqui-ai/TTS).
+
+Contributions are welcome!  
+Feel free to submit improvements, bug fixes, or issues.
+
+---
+
+## 📝 License
+
+This project is distributed under an **open source** license.
 
 ---
 
 ## 📫 Contact
 
-Pour toute question, retour ou suggestion :  
+For questions, feedback, or suggestions:  
 📧 [easyaivideo@gmail.com](mailto:easyaivideo@gmail.com)
 
 ---
 
 > Made with ❤️ by EasyAI-France
+

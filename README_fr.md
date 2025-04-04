@@ -111,7 +111,7 @@ N’hésitez pas à proposer des améliorations, corriger des bugs ou créer des
 
 ## 📝 Licence
 
-Ce projet est distribué sous licence **open source**.
+This project is distributed under an MPL-2.0 license.
 
 ---
 

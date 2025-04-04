@@ -326,6 +326,7 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
 clear_console()
 print(ascii_art)
 print('https://www.youtube.com/@EasyAI-french04')
+print('https://github.com/EasyAI-France/Audiobook-Simplifier')
 verif_gpu()
 print('Ouvre cette URL Dans ton navigateur')
 EasyAI.launch()

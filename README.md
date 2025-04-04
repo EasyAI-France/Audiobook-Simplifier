@@ -111,8 +111,7 @@ Feel free to submit improvements, bug fixes, or issues.
 
 ## 📝 License
 
-This project is distributed under an **open source** license.
-
+This project is distributed under an MPL-2.0 license.
 ---
 
 ## 📫 Contact

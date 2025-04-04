@@ -46,7 +46,7 @@ Make sure the following components are installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/audiobook-simplifier.git
+   git clone https://github.com/EasyAI-France/audiobook-simplifier.git
    cd audiobook-simplifier
    ```
 

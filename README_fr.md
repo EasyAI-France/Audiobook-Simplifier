@@ -46,7 +46,7 @@ Assurez-vous d'avoir installé les éléments suivants :
 
 1. Clonez ce dépôt sur votre machine :
    ```bash
-   git clone https://github.com/votre-utilisateur/audiobook-simplifier.git
+   git clone https://github.com/EasyAI-France/audiobook-simplifier.git
    cd audiobook-simplifier
    ```
 

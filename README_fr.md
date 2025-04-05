@@ -86,9 +86,11 @@ python scripts\main_eng.py
 4. **Téléchargez votre fichier texte ou eBook** (optimisé paragraphe par paragraphe).
 5. **Lancez le traitement** pour rendre le texte plus compréhensible pour le moteur TTS.
 6. **Générez les fichiers audio** (plusieurs segments seront créés dans le dossier `cache`).
-7. **Compilez les segments** en un seul fichier audio via le bouton « Compiler les fichiers audio ».
-8. **Écoutez et téléchargez** votre livre audio.
-9. **Nettoyez le cache** avec « Supprimer les fichiers ».
+7. Dans le terminal :
+    Vous devez accepter les conditions de la licence non commerciale CPML : https://coqui.ai/cpml
+8. **Compilez les segments** en un seul fichier audio via le bouton « Compiler les fichiers audio ».
+9. **Écoutez et téléchargez** votre livre audio.
+10. **Nettoyez le cache** avec « Supprimer les fichiers ».
 
 #### En cas de fichier audio incorrect :
 

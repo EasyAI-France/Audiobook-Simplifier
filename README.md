@@ -86,9 +86,11 @@ python scripts\main_eng.py
 4. **Upload your text file or eBook** (optimized for one paragraph at a time).
 5. **Process the text** to make it more understandable for the TTS engine.
 6. **Convert text files into audio files** (multiple segments will be created in the `cache` folder).
-7. **Compile segments into a single audio file** using the "Compile audio files" button.
-8. **Listen to and download** your audiobook.
-9. **Clear the cache** using the "Delete files" button.
+7. In the terminal:
+    You must accept the terms of the CPML non-commercial license: https://coqui.ai/cpml
+8. **Compile segments into a single audio file** using the "Compile audio files" button.
+9. **Listen to and download** your audiobook.
+10. **Clear the cache** using the "Delete files" button.
 
 #### In case of an incorrectly generated file:
 

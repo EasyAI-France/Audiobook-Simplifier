@@ -1,27 +1,6 @@
-@title Installation EazyAI **Audiobook Simplifier**
+@title Installation Audiobook-Simplifier
+
 @echo off
-echo Do you agree to the terms of the license? (Y/N)
-set /p response=Your answer: 
-
-if /i "%response%"=="Y" (
-    echo Thank you for accepting the license. The process will continue...
-    
-    REM Placez ici les �tapes suivantes de votre script
-) else if /i "%response%"=="N" (
-   
-    echo You must accept the license to continue. Closing the program...
-    pause
-    exit /b
-) else (
-   
-    echo Unrecognized response. Please start the script and enter Y or N.
-    pause
-    exit /b
-)
-
-
-
-
 REM Vérification de l'installation de Python 3.10
 setlocal
 
@@ -36,11 +15,6 @@ for /f "tokens=*" %%i in ('%python_exe% -c "import sys; print(sys.version.split(
 
 :check_version
 
-REM Afficher la version capturée
-echo Captured Python version: %python_version%
-
-REM Vérifier si la version commence par "3.10"
-echo %python_version% | findstr /r /c:"^3\.10" >nul
 
 
 if %errorlevel% equ 0 (
@@ -51,7 +25,7 @@ if %errorlevel% equ 0 (
     exit /b
 )
 
-REM Cr�ation de l'environnement virtuel (si inexistant)
+REM Cr ation de l'environnement virtuel (si inexistant)
 if not exist ".venv" (
     py -3.10 -m venv .venv
 ) else (
@@ -64,28 +38,46 @@ if not exist ".venv" (
 REM Activation de l'environnement virtuel
 call .venv\Scripts\activate
 
-REM Mise � jour de pip
-python -m pip install --upgrade pip
+REM Mise   jour de pip
+rem pip install tensorflow
+echo ------------------------------------------------  
+echo Do you have an Nvidia graphics card?
+set /p response= 1 = Yes / 2 = No : 
+if /i "%response%"=="1" (
+    echo Installation in progress...
+    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
+) else if /i "%response%"=="2" (
+    echo Installation in progress...
+    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+) else (
+   
+    echo Unrecognized response. Please start the script and enter 1 = Yes or 2 = No.
+    pause
+    exit /b
+)
+REM Installation des d pendances via requirements.txt
 
-
-REM Installation des d�pendances via requirements.txt
 pip install -r requirements.txt || (
-    
+    echo ------------------------------------------------ 
+    echo Installation in progress...
     echo [Error] An error occurred while installing dependencies.
+    pause
     deactivate
-
     exit /b
 )
 
+REM Mettre à jour pip
+python -m pip install --upgrade pip
 
-REM Cr�ation des dossiers n�cessaires
+REM Cr ation des dossiers n cessaires
 if not exist tmp mkdir tmp
 if not exist cache mkdir cache
 if not exist output mkdir output
 if not exist model mkdir model
 
+echo ------------------------------------------------ 
+echo Installation complete.
 
-
-REM D�sactivation de l'environnement virtuel
+REM D sactivation de l'environnement virtuel
 deactivate
 @echo on

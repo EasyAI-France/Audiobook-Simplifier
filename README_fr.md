@@ -25,6 +25,14 @@ Assurez-vous d'avoir installé les éléments suivants :
 - **FFmpeg**  
   👉 [Télécharger FFmpeg](https://www.ffmpeg.org/download.html)  
   > Ajoutez FFmpeg à votre variable d'environnement `PATH`.
+  
+- **eSpeak NG (64 bits)**  
+  👉 [Télécharger eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
+
+- **Git pour Windows**  
+  👉 [Télécharger Git](https://git-scm.com/downloads/win)
+
+###🔧 Uniquement pour les propriétaires de cartes Nvidia
 
 - **CUDA Toolkit 11.8**  
   👉 [Télécharger  CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
@@ -34,29 +42,36 @@ Assurez-vous d'avoir installé les éléments suivants :
   > Dézippez et copiez les fichiers dans :  
   > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8`
 
-- **eSpeak NG (64 bits)**  
-  👉 [Télécharger eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
-
-- **Git pour Windows**  
-  👉 [Télécharger Git](https://git-scm.com/downloads/win)
 
 ---
 
-### 📦 Installation du projet
+### 📦 Installation du projet sur Linux et Windows
 
 1. Clonez ce dépôt sur votre machine :
    ```bash
    git clone https://github.com/EasyAI-France/audiobook-simplifier.git
    cd audiobook-simplifier
    ```
-
+### 🔧 Uniquement pour les propriétaires de cartes Nvidia
 2. Installez les dépendances dans un environnement virtuel (optionnel mais recommandé) :
    ```bash
    python -m venv .venv
    .venv\Scripts\activate
+   pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
    pip install -r requirements.txt
    ```
-
+### 🔧Pour les autres
+2. Installez les dépendances dans un environnement virtuel (optionnel mais recommandé) :
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+   pip install -r requirements.txt
+   ```
+### Installation du projet sous Windows uniquement
+- Double-cliquez sur « install.bat ».
+- Sélectionnez vos graphiques.
+- Une fois le projet installé, le terminal se ferme automatiquement.  
 ---
 
 ## ▶️ Utilisation

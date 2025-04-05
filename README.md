@@ -33,7 +33,7 @@ Make sure the following components are installed:
 - **Git for Windows**  
   👉 [Download Git](https://git-scm.com/downloads/win)
 
-## 🔧 Only for Nvidia card owners
+### 🔧 Only for Nvidia card owners
 
 - **CUDA Toolkit 11.8**  
   👉 [Download CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
@@ -71,7 +71,10 @@ Make sure the following components are installed:
    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
    pip install -r requirements.txt
    ``` 
-
+Project Installation on Windows Only
+  - Double-click `install.bat`.
+  - Select your graphics
+  - Once the project is installed, the terminal closes by itself
 ---
 
 ## ▶️ Usage

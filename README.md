@@ -26,6 +26,15 @@ Make sure the following components are installed:
   👉 [Download FFmpeg](https://www.ffmpeg.org/download.html)  
   > Add FFmpeg to your system `PATH` variable.
 
+
+- **eSpeak NG (64-bit)**  
+  👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
+
+- **Git for Windows**  
+  👉 [Download Git](https://git-scm.com/downloads/win)
+
+## 🔧 Only for Nvidia card owners
+
 - **CUDA Toolkit 11.8**  
   👉 [Download CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
 
@@ -34,28 +43,34 @@ Make sure the following components are installed:
   > Unzip and copy the files into :  
   > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8`
 
-- **eSpeak NG (64-bit)**  
-  👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
-
-- **Git for Windows**  
-  👉 [Download Git](https://git-scm.com/downloads/win)
 
 ---
 
-### 📦 Project Installation
+### 📦 Project Installation on Linux and Windows
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/EasyAI-France/audiobook-simplifier.git
    cd audiobook-simplifier
    ```
+## 🔧 Only for Nvidia card owners
 
 2. (Recommended) Install dependencies in a virtual environment:
    ```bash
    python -m venv .venv
    .venv\Scripts\activate
+   pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
    pip install -r requirements.txt
    ```
+## 🔧For others
+
+2. (Recommended) Install dependencies in a virtual environment:
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+   pip install -r requirements.txt
+   ``` 
 
 ---
 

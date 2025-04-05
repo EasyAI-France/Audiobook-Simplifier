@@ -29,6 +29,10 @@ Make sure the following components are installed:
 - **CUDA Toolkit 11.8**  
   👉 [Download CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
 
+- **cuDNN v8.9.7 for CUDA 11**  
+  👉 [Download cuDNN v8.9.7](https://developer.nvidia.com/rdp/cudnn-archive)  
+  > Unzip and copy the files into :  
+  > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8`
 
 - **eSpeak NG (64-bit)**  
   👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)

@@ -88,7 +88,7 @@ Assurez-vous d'avoir installé les éléments suivants :
 
 ```bash
 .venv\Scripts\activate
-python scripts\main_eng.py
+python scripts\main.py
 ```
 
 ---

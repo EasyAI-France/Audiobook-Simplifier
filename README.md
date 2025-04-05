@@ -26,13 +26,9 @@ Make sure the following components are installed:
   👉 [Download FFmpeg](https://www.ffmpeg.org/download.html)  
   > Add FFmpeg to your system `PATH` variable.
 
-- **CUDA Toolkit 10.1**  
-  👉 [Download CUDA Toolkit 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-base)  
+- **CUDA Toolkit 11.8**  
+  👉 [Download CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)  
 
-- **cuDNN v7.6.5 for CUDA 10.1**  
-  👉 [Download cuDNN v7.6.5](https://developer.nvidia.com/rdp/cudnn-archive)  
-  > Extract and copy the files into:  
-  > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1`
 
 - **eSpeak NG (64-bit)**  
   👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)

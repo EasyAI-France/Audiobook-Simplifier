@@ -293,12 +293,12 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
     delete_button.click(delete_files, [supp], output1)
 
     gr.Markdown("EasyAI V1.0")
-    gr.Markdown("https://github.com/EasyAI-France/Audiobook-Simplifier")
+    gr.Markdown("https://www.youtube.com/@EasyAI-french04")
 
 clear_console()
 print(ascii_art)
 print('https://www.youtube.com/@EasyAI-french04')
-print('https://github.com/EasyAI-France/Audiobook-Simplifier')
 verif_gpu()
+print(device)
 print('Open this URL in your browser')
 EasyAI.launch()

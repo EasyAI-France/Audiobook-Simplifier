@@ -17,20 +17,32 @@ Ce projet transforme des documents texte ou des livres électroniques en fichier
 Assurez-vous d'avoir installé les éléments suivants :
 
 - **Python 3.10**  
-  👉 [Télécharger Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)  
+  👉 [Télécharger Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)
+  
   > Pendant l'installation :
   > - Cochez "Installer pour tous les utilisateurs".
   > - Cochez "Ajouter Python au PATH".
+  
+  👉 [Download Python 3.10.11 (Windows-Store)](https://apps.microsoft.com/detail/9PJPW5LDXLZ5?hl=neutral&gl=FR&ocid=pdpshare)
+  
+- **Télécharger les outils de création Microsoft C++**
+-👉 https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/
+
 
 - **FFmpeg**  
   👉 [Télécharger FFmpeg](https://www.ffmpeg.org/download.html)  
   > Ajoutez FFmpeg à votre variable d'environnement `PATH`.
-  
-- **eSpeak NG (64 bits)**  
-  👉 [Télécharger eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
+  >
+  > Ou avec Terminal de commande
+  >   ```bash
+  >   winget install "FFmpeg (Essentials Build)"
+  >  ```
 
 - **Git pour Windows**  
   👉 [Télécharger Git](https://git-scm.com/downloads/win)
+
+
+
 
 ###🔧 Uniquement pour les propriétaires de cartes Nvidia
 
@@ -42,7 +54,8 @@ Assurez-vous d'avoir installé les éléments suivants :
   > Dézippez et copiez les fichiers dans :  
   > `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8`
 
-
+- **eSpeak NG (64 bits) (facultatif) **  
+  👉 [Télécharger eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
 ---
 
 ### 📦 Installation du projet sur Linux et Windows

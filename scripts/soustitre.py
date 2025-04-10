@@ -110,7 +110,7 @@ def convertir_en_temps(total_seconds):
     seconds = total_seconds % 60   # Calcul des secondes restantes
     intminutes=int(minutes)
     intseconds=int(seconds)
-    return f"{intminutes} min/ {intseconds} s"
+    return f"{intminutes}:{intseconds}"
 
 
 def inscription_fin(pass_txt,pass_txt2):

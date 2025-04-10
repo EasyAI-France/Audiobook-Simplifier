@@ -17,21 +17,31 @@ This project converts text documents or eBooks into audio files using **TTSv2**,
 Make sure the following components are installed:
 
 - **Python 3.10**  
-  👉 [Download Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)  
+  👉 [Download Python 3.10.11 (Windows)](https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe)
+  OR [Download Python 3.10.11 (Windows-Store)](https://apps.microsoft.com/detail/9PJPW5LDXLZ5?hl=neutral&gl=FR&ocid=pdpshare)
+
   > During installation:
   > - Check "Install for all users".
   > - Check "Add Python to PATH".
 
+- **Download Microsoft C++ Authoring Tools**
+-👉 https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/
+
 - **FFmpeg**  
   👉 [Download FFmpeg](https://www.ffmpeg.org/download.html)  
   > Add FFmpeg to your system `PATH` variable.
+  >
+  > Command terminal
+  >   ```bash
+  >   winget install "FFmpeg (Essentials Build)"
+  >  ```
 
-
-- **eSpeak NG (64-bit)**  
-  👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
 
 - **Git for Windows**  
   👉 [Download Git](https://git-scm.com/downloads/win)
+
+- **eSpeak NG (64-bit)** (optional)
+- 👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
 
 ### 🔧 Only for Nvidia card owners
 

@@ -151,7 +151,7 @@ def go_prime(traite_fichier, nom_sortie_name, lang_chose):
                 lecture1 = lecture_fichier(output_file_path)
                 function_voice(traite_fichier, lecture1, nom_sortie_name, audio, lang_chose)
                 print('End of audio processing!')
-                soustitre.inscription_fin('End of audio processing!', ascii_art)
+                #soustitre.inscription_fin('End of audio processing!', ascii_art)
                 return f'Text processed and saved in cache/{nom_sortie_name}.wav'
             else:
                 print('Text file is empty!')
@@ -239,7 +239,8 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             with gr.Column(scale=1):
                 outputmodel = gr.Textbox(label="Basic voice", value="", interactive=False)
                 download_button_model = gr.UploadButton("Download the wav file", file_count="single", file_types=[".wav"])
-                continuer = gr.Radio(label="Do you want subtitles created?", choices=["Yes", "No"], value="")
+                continuer =gr.State(value="oui") 
+                
             with gr.Column(scale=1):
                 lang_chose = gr.Dropdown(
                     ["en", "fr", "it", "es", "nl"], label="LANGUAGES", info="Choose language!"
@@ -253,9 +254,9 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             with gr.Column(scale=1):
                 download_button = gr.UploadButton("Upload a text file", file_count="single", file_types=[".txt"])
                 output3 = gr.Textbox(label="Infos Console", interactive=False)
-            with gr.Column(scale=1):
-                traite_fichier1 = gr.Radio(label="What type of file to process?", choices=["Text", "Ebook"], value="")
+          
         with gr.Accordion("Text to transform ", open=False):
+            traite_fichier1 = gr.Radio(label="What type of file to process?", choices=["Text", "Ebook"], value="Ebook")
             output = gr.Textbox(label="Detailed text", value="", lines=50)
         run_button_txtm = gr.Button("Run text file processing")
 

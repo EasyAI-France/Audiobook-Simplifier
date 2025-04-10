@@ -3,23 +3,17 @@ import re
 def read_doc(filetext):
 
             text = filetext
-            # Supprimer d autre element 
+             
             text = re.sub(r'[«»]', "", text)
             text= re.sub(r'["]', "", text)
             text= re.sub(r'[;]', ".", text)
             text = re.sub(r'[:]', ".", text)
-            #text = re.sub(r'[-]', " ", text)
             text = re.sub(r'[“]', "", text)
             text = re.sub(r'[”]', "", text)
             text = re.sub(r'[«]', "", text)
             text = re.sub(r'[»]', "", text)
             text = re.sub(r'[.]', ".\n", text)
-            #text = re.sub(r'-t-', " t'", text)
-
-            #text = re.sub(r'... ', ".", text)
-            # Convertir toutes les majuscules en minuscules
-            #text = text.lower()
-        
+      
             return text
 
 def supprimer_lignes_vides_fin(fichier):

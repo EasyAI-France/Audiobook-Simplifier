@@ -172,7 +172,7 @@ def go_prime(traite_fichier, nom_sortie_name, lang_chose):
                 lecture1 = lecture_fichier(output_file_path)
                 function_voice(traite_fichier, lecture1, nom_sortie_name, audio, lang_chose)
                 print('Fin du traitement audio!')
-                soustitre.inscription_fin('Fin du traitement audio!',ascii_art)
+                #soustitre.inscription_fin('Fin du traitement audio!',ascii_art)
                 return f'Texte traité et enregistré dans cache/{nom_sortie_name}.wav'
             else:
                 print('Fichier texte est vide!')
@@ -266,7 +266,10 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             with gr.Column(scale=1):
                 outputmodel = gr.Textbox(label="Voix de base", value="", interactive=False)
                 download_button_model = gr.UploadButton("Télécharger le fichier wav", file_count="single", file_types=[".wav"])
-                continuer = gr.Radio(label="Veux-tu la création des sous-titres ?", choices=["oui", "non"], value="")
+
+                #continuer = gr.Radio(label="Veux-tu la création des sous-titres ?", choices=["oui", "non"], value="")
+                continuer =gr.State(value="oui") 
+
             with gr.Column(scale=1):    
                 lang_chose = gr.Dropdown(
                     ["fr", "en", "it", "es", "nl"], label="Langues", info="Choisir la langue !"
@@ -280,9 +283,14 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             with gr.Column(scale=1):
                 download_button = gr.UploadButton("Télécharger un fichier texte", file_count="single", file_types=[".txt"])
                 output3 = gr.Textbox(label="Infos Console", interactive=False)
-            with gr.Column(scale=1):
-                traite_fichier1 = gr.Radio(label="Quel type de fichier traiter ?", choices=["Texte", "Ebook"], value="")
-        with gr.Accordion("Texte à transformer ", open=False):       
+
+            
+            #with gr.Column(scale=1):
+            #    traite_fichier1 = gr.Radio(label="Quel type de fichier traiter ?", choices=["Texte", "Ebook"], value="Ebook")
+            
+
+        with gr.Accordion("Texte à transformer ", open=False): 
+            traite_fichier1 = gr.Radio(label="Quel type de fichier traiter ?", choices=["Texte", "Ebook"], value="Ebook")      
             output = gr.Textbox(label="Texte détaillé", value="", lines=50)
         run_button_txtm = gr.Button("Exécuter le traitement des fichiers texte")
 

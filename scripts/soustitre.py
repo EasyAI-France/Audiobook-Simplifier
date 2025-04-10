@@ -64,7 +64,7 @@ def save_transcribed_audio(originetexte,result, output_file , index_n,time_in):
             file.write(f"Start {todays_date}\n {index_n} -> {temps_formatte} | {output_file}\n   O= {originetexte} \n   T={result}\n")
     else:
         with open("cache/log.txt", 'a', encoding='utf-8') as file:
-            file.write(f" {index_n} -> {temps_formatte} | {output_file}\n   O= {originetexte} \n   T={result}\n")
+            file.write(f" {index_n} -> {temps_formatte} | {output_file}\n   txt= {originetexte} \n   AI={result}\n")
 
 def save_log(originetexte, output_file , index_n):
     #Écrit les log en format TXT.

@@ -40,8 +40,6 @@ Make sure the following components are installed:
 - **Git for Windows**  
   👉 [Download Git](https://git-scm.com/downloads/win)
 
-- **eSpeak NG (64-bit)** (optional)
-- 👉 [Download eSpeak NG](https://github.com/espeak-ng/espeak-ng/releases)
 
 ### 🔧 Only for Nvidia card owners
 

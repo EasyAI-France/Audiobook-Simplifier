@@ -12,7 +12,7 @@ def read_doc(filetext):
             text = re.sub(r'[”]', "", text)
             text = re.sub(r'[«]', "", text)
             text = re.sub(r'[»]', "", text)
-            text = re.sub(r'[ .]', ".", text)
+            #text = re.sub(r'[ .]', ".", text)
             text = re.sub(r'[.]', ".\n", text)
       
             return text

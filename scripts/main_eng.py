@@ -260,7 +260,7 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             output = gr.Textbox(label="Detailed text", value="", lines=50)
         run_button_txtm = gr.Button("Run text file processing")
 
-    gr.Markdown("# Part 3: Transform audio files and create subtitles.")
+    gr.Markdown("# Part 3: Transform audio files.")
     with gr.Group():
         with gr.Row():
             output1 = gr.Textbox(label="Infos", interactive=False)

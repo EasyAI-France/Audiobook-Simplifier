@@ -257,7 +257,7 @@ def delete_files(info):
 # Interface Gradio
 with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
 
-    gr.Label("**Simplificateur de livres audio**")
+    gr.Label("**Créateur de livres audio**")
 
     gr.Markdown("# Partie 1 : Réglage de base")
     with gr.Group():
@@ -294,7 +294,7 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
             output = gr.Textbox(label="Texte détaillé", value="", lines=50)
         run_button_txtm = gr.Button("Exécuter le traitement des fichiers texte")
 
-    gr.Markdown("# Partie 3 : Transformation des fichiers audio et création des sous-titres.")
+    gr.Markdown("# Partie 3 : Transformation des fichiers audio.")
     with gr.Group():
         with gr.Row():    
             output1 = gr.Textbox(label="Infos", interactive=False)

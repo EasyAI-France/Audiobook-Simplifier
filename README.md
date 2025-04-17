@@ -149,5 +149,5 @@ For questions, feedback, or suggestions:
 
 ---
 
-> Made with ❤️ by EasyAI-France
+
 

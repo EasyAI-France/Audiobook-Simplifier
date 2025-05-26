@@ -37,7 +37,7 @@ Make sure the following components are installed:
   >  ```
 
 
-- **Git for Windows**  
+- **Git**  
   👉 [Download Git](https://git-scm.com/downloads/win) OR https://git-scm.com/downloads
 
 

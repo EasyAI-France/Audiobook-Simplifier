@@ -39,7 +39,7 @@ Assurez-vous d'avoir installé les éléments suivants :
   >  ```
 
 - **Git pour Windows**  
-  👉 [Télécharger Git](https://git-scm.com/downloads/win)
+  👉 [Télécharger Git](https://git-scm.com/downloads/win) Ou https://git-scm.com/downloads
 
 
 

@@ -97,7 +97,7 @@ Assurez-vous d'avoir installé les éléments suivants :
 - Sélectionnez votre langue.
 - Ouvrez l’URL affichée dans votre navigateur.
 
-#### Ligne de commande :
+#### Ligne de commande (python) :
 
 ```bash
 .venv\Scripts\activate

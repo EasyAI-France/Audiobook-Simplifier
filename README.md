@@ -38,7 +38,7 @@ Make sure the following components are installed:
 
 
 - **Git for Windows**  
-  👉 [Download Git](https://git-scm.com/downloads/win)
+  👉 [Download Git](https://git-scm.com/downloads/win) OR https://git-scm.com/downloads
 
 
 ### 🔧 Only for Nvidia card owners

@@ -95,7 +95,7 @@ Make sure the following components are installed:
 - Select your language.
 - Open the displayed URL in your browser.
 
-#### Command line:
+#### Command line (Python):
 
 ```bash
 .venv\Scripts\activate

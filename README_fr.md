@@ -38,7 +38,7 @@ Assurez-vous d'avoir installé les éléments suivants :
   >   winget install "FFmpeg (Essentials Build)"
   >  ```
 
-- **Git pour Windows**  
+- **Git**  
   👉 [Télécharger Git](https://git-scm.com/downloads/win) Ou https://git-scm.com/downloads
 
 

@@ -3,7 +3,7 @@ import re
 import datetime
 import filtre
 import torch
-import soustitre
+#import soustitre
 import shutil
 from TTS.api import TTS
 from pathlib import Path
@@ -147,12 +147,12 @@ def function_voice(traite_fichier, fichier_entree, nom_sortie, voice_chose, lang
             fileaudio = f"cache/{str(index_n)}_{nom_sortie}.wav"
             tts.tts_to_file(text=segment, speaker_wav=audio, language=lang_chose, file_path=fileaudio)
             Complet_str = f"output/c_{nom_sortie}.srt"
-            if traite_fichier == "oui":
+            """ if traite_fichier == "oui":
                 filesoustitre = f"cache/{str(index_n)}_{nom_sortie}.wav"
                 nID, date_time = soustitre.mainst(segment,fileaudio, filesoustitre, Complet_str, nID, date_time, index_n)
             else:
                 filesoustitre = f"cache/{str(index_n)}_{nom_sortie}.wav"
-                soustitre.save_log(segment, fileaudio , index_n)
+                soustitre.save_log(segment, fileaudio , index_n) """
             index_n += 1
 
 

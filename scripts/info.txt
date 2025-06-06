@@ -1,5 +1,0 @@
-docker build -t audiobook_simplifier .
-docker run -p 7860:7860 audiobook_simplifier 
-
-docker run -e LANGUE=fr -p 7860:7860 audiobook_simplifier
-docker run -e LANGUE=eng -p 7860:7860 audiobook_simplifier

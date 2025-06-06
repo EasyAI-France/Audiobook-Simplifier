@@ -20,7 +20,7 @@ set /p response=(1=France / 2=English) :
 if /i "%response%"=="1" (
     echo OK, c'est parti
     echo attendez SVP!
-    python scripts/main.py || (
+    python scripts/main_fr.py || (
     echo [Erreur] Une erreur s'est produite lors de l'exécution du script.
     pause
     deactivate

@@ -12,10 +12,22 @@ def read_doc(filetext):
             text = re.sub(r'[”]', "", text)
             text = re.sub(r'[«]', "", text)
             text = re.sub(r'[»]', "", text)
-            #text = re.sub(r'[ .]', ".", text)
-            text = re.sub(r'[.]', ".\n", text)
-      
+            text = re.sub(r'[\[\]]', "", text)
+            #text = re.sub(r'[.]', ".\n", text)
+            text = re.sub(r'\s+\.', '.', text)
+            text = re.sub(r'\s+\!', '!', text)
+            text=supprimer_sauts_de_ligne_fin(text)
+
             return text
+
+def supprimer_sauts_de_ligne_fin(texte):
+    """
+    Supprime les sauts de ligne (\n ou \r\n) à la fin du texte,
+    sans toucher au reste du contenu.
+    """
+
+    return texte.rstrip()
+
 
 def supprimer_lignes_vides_fin(fichier):
 
@@ -38,4 +50,10 @@ def supprimer_lignes_vides_fin(fichier):
     except Exception as e:
         print(f"[Erreur] Une erreur s'est produite : {e}")
 
+
+def compter_points(texte):
+    
+    # Compter le nombre de points dans le texte
+    nombre_de_points = texte.count('.')
+    return nombre_de_points
 

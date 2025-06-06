@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  gradio_app:
+    build: .
+    container_name: audiobook_simplifier
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./cache:/app/cache
+      - ./model:/app/model
+      - ./output:/app/output
+      - ./tmp:/app/tmp
+      - ./tmp:/app/scripts
+    environment:
+      - LANGUE=eng
+    command: python start.py

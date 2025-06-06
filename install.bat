@@ -44,10 +44,10 @@ set /p response=1 = Yes  / 2 = No :
 
 if /i "%response%"=="1" (
     echo Installing with GPU support Cuda...
-    pip install torch==2.5.1  torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
+    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
 ) else if /i "%response%"=="2" (
     echo Installing CPU-only version...
-    pip install torch==2.5.1  torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+    pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 ) else (
     echo Unrecognized response. Please restart the script and enter 1 or 2.
     pause

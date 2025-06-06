@@ -3,7 +3,6 @@ import re
 import datetime
 import filtre
 import torch
-#import soustitre
 import shutil
 from TTS.api import TTS
 from pathlib import Path
@@ -96,7 +95,9 @@ def re_audio(processed_text, file_name, lang_chose):
     """Processes the text and saves the audio file."""
     texte = filtre.read_doc(processed_text)
     write_processed_text(output_file_path_naudio, texte)
-
+    # ✅ Acceptation automatique des conditions Coqui
+    os.environ["COQUI_TOS_AGREED"] = "1"   
+    
     tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
     clear_console()
     print(ascii_art)
@@ -107,7 +108,17 @@ def re_audio(processed_text, file_name, lang_chose):
     print(f'Processed text saved in -> cache/{file_name}.wav')
     return f'Processed text saved in -> cache/{file_name}.wav', f'cache/{file_name}.wav'
 
-def function_voice(traite_fichier, fichier_entree, nom_sortie, voice_chose, lang_chose):
+def silence(index_n, name,p_duration ):
+    ipduration=float(p_duration)
+    silence = AudioSegment.silent(duration=ipduration)
+    silence = AudioSegment.silent(duration=p_duration)
+    silence.export(f"cache/{str(index_n)}_{name}_p.wav", format="wav")
+
+
+def commence_par_saut_de_ligne(segment):
+    return segment.startswith('\n')
+
+def function_voice(traite_fichier, fichier_entree, nom_sortie, voice_chose, lang_chose,t_pause):
     """Converts text to speech and generates subtitles for each text segment."""
     index_n = 0
     texte = fichier_entree
@@ -122,22 +133,18 @@ def function_voice(traite_fichier, fichier_entree, nom_sortie, voice_chose, lang
         if not segment:
             print('End of audio processing!')
         else:
-            print(segment)
-            print(f"ID: {nID}")
+
+            if commence_par_saut_de_ligne(segment):
+                print("Pause")
+                silence(index_n,nom_sortie,t_pause)
+                index_n += 1
+
             fileaudio = f"cache/{str(index_n)}_{nom_sortie}.wav"
             tts.tts_to_file(text=segment, speaker_wav=audio, language=lang_chose, file_path=fileaudio)
             Complet_str = f"output/c_{nom_sortie}.srt"
-            """
-            if traite_fichier == "Yes":
-                filesoustitre = f"cache/{str(index_n)}_{nom_sortie}.wav"
-                nID, date_time = soustitre.mainst(segment,fileaudio, filesoustitre, Complet_str, nID, date_time, index_n)
-            else:
-                filesoustitre = f"cache/{str(index_n)}_{nom_sortie}.wav"
-                soustitre.save_log(segment, fileaudio , index_n)
-            """
             index_n += 1
 
-def go_prime(traite_fichier, nom_sortie_name, lang_chose):
+def go_prime(traite_fichier, nom_sortie_name, lang_chose,t_pause):
     """Manages the main process of text processing and voice generation."""
     verif_doc = verifier_repertoire_vide(model_file)
 
@@ -238,14 +245,15 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
 
         with gr.Row():
             with gr.Column(scale=1):
+                lang_chose = gr.Dropdown(
+                    ["en", "fr", "it", "es", "nl"], label="LANGUAGES", info="Choose language!"
+                )
                 outputmodel = gr.Textbox(label="Basic voice", value="", interactive=False)
                 download_button_model = gr.UploadButton("Download the wav file", file_count="single", file_types=[".wav"])
                 continuer =gr.State(value="oui") 
                 
             with gr.Column(scale=1):
-                lang_chose = gr.Dropdown(
-                    ["en", "fr", "it", "es", "nl"], label="LANGUAGES", info="Choose language!"
-                )
+                gt_pause = gr.Textbox(label="Break time (Seconds)", value="1")
                 texte_input = gr.Textbox(label="File name", value="")
 
     gr.Markdown("# Part 2: Process the text file")
@@ -288,7 +296,7 @@ with gr.Blocks(theme=gr.themes.Citrus()) as EasyAI:
     download_button_model.upload(download_wav, download_button_model, outputmodel)
     download_button.upload(download_txt, download_button, output3)
     run_button1.click(lambda nom_sortie_name: (linkaudio(nom_sortie_name), f"{sortie}Combine_{nom_sortie_name}.mp3"), texte_input, [output1, audio_player])
-    run_button.click(go_prime, [continuer, texte_input, lang_chose], output1)
+    run_button.click(go_prime, [continuer, texte_input, lang_chose,gt_pause], output1)
     run_button_txtm.click(go_txt, [traite_fichier1, output], [output, output3])
     run_bouton_audio.click(re_audio, [output_test, file_name, lang_chose], [output4, audio_player1])
 
@@ -302,5 +310,5 @@ print(ascii_art)
 print('https://www.youtube.com/@EasyAI-french04')
 verif_gpu()
 print(device)
-print('Open this URL in your browser')
-EasyAI.launch()
+print('Open this URL in your browser :127.0.0.1:7860')
+EasyAI.launch(server_name="0.0.0.0", server_port=7860)

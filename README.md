@@ -84,6 +84,23 @@ Make sure the following components are installed:
   - Select your graphics
   - Once the project is installed, the terminal closes by itself
 ---
+### 📦 Installing the project on Docker 
+  > Clone the GitHub directory, then navigate to the root of the Audiobook-Simplifier directory, where the Dockerfile and docker-compose.yml files are located.
+  > To create your Docker image, type in the terminal:
+
+```bash
+docker build -t audiobook_simplifier .
+```
+👉  To launch it in English, type:
+
+```bash
+docker run -e LANGUE=eng -p 7860:7860 audiobook_simplifier
+```
+👉  Or to launch it in French:
+
+```bash
+docker run -e LANGUE=fr -p 7860:7860 audiobook_simplifier
+```
 
 ## ▶️ Usage
 

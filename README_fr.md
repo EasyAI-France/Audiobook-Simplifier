@@ -97,12 +97,13 @@ Assurez-vous d'avoir installé les éléments suivants :
 👉 Pour le lancer en français, tapez :
 
   ```bash
-  docker run -e LANGUE=fr -p 7860:7860 audiobook_simplifier
+  docker run --name EasyAI -e LANGUE=fr -p 7860:7860 audiobook_simplifier
+
   ```
 - Ou pour le lancer en anglais :
 
   ```bash
-  docker run -e LANGUE=eng -p 7860:7860 audiobook_simplifier
+  docker run --name EasyAI -e LANGUE=eng -p 7860:7860 audiobook_simplifier
   ```
 
 

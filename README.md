@@ -94,12 +94,12 @@ docker build -t audiobook_simplifier .
 👉  To launch it in English, type:
 
 ```bash
-docker run -e LANGUE=eng -p 7860:7860 audiobook_simplifier
+docker run --name EasyAI -e LANGUE=eng -p 7860:7860 audiobook_simplifier
 ```
 👉  Or to launch it in French:
 
 ```bash
-docker run -e LANGUE=fr -p 7860:7860 audiobook_simplifier
+docker run --name EasyAI -e LANGUE=fr -p 7860:7860 audiobook_simplifier
 ```
 
 ## ▶️ Usage
